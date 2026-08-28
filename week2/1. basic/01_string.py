@@ -37,6 +37,12 @@ def is_palindrome(s):
     # TODO: 알파벳과 숫자만 남기고 소문자로 변환하세요
     # 힌트: isalnum() 메서드와 lower() 메서드 사용
     pass
+
+    clean = ""
+    for char in s:
+        if char.isalnum(): #알파벳이나 숫자 여부 확인
+           clean += char.lower() #소문자화하여 변수에 저장
+    return clean == clean[::-1]
     
     # TODO: 정제된 문자열이 회문인지 확인하세요
     # 방법1: 문자열을 뒤집어서 비교 ([::-1] 사용)
