@@ -42,20 +42,19 @@ def is_palindrome(s):
         # is: "~인가요?" (여부를 물어보는 접두사)
         # al: alphabetic (알파벳)
         # num: numeric (숫자)
-        #     pass
-    
+    pass
+    clean = ""
+    for char in s:
+        # if char.isalnum() == True 보다는 아래 파이써닉한 표현이고
+        if char.isalnum():
+            clean += char.lower()
+ 
     # TODO: 정제된 문자열이 회문인지 확인하세요
     # 방법1: 문자열을 뒤집어서 비교 ([::-1] 사용)
     # 방법2: 양 끝 인덱스를 이용한 투 포인터 방식
 
-    clean = ""
-    for char in s:
-        if char.isalnum(): #알파벳이나 숫자 여부 확인
-           clean += char.lower() #소문자화하여 변수에 저장
-    return clean == clean[::-1]
+    return clean[::-1] == clean
 
-    
-    #return False
 
 # 테스트 케이스
 if __name__ == "__main__":
@@ -85,5 +84,12 @@ if __name__ == "__main__":
     result4 = is_palindrome(test4)
     print(f"입력: \"{test4}\"")
     print(f"회문 여부: {result4}")
+
+    # clean = ""
+    # for char in s:
+    #     if char.isalnum(): 
+    #      clean += char.lower()
+    
+    # return clean[::-1] == clean
 
 

@@ -43,21 +43,35 @@ def find_above_average_students(students):
     """
     # TODO: 모든 학생의 점수를 리스트로 추출하세요
     pass
-    score = [student['score'] for student in students] 
+
+    # 컴프리헨션(Comprehension)은 파이썬(Python)을 포함한 일부 프로그래밍 언어에서 반복문과 조건문을 사용하여
+    # 리스트, 딕셔너리, 세트 등의 자료구조를 간결하고 직관적으로 생성하는 문법
+    # students: 우리가 가진 전체 학생 리스트
+    # student: 거기서 하나씩 쏙쏙 뽑아낼 때 쓸 임시 이름(변수)
+    # student['score']: 그 학생 데이터에서 점수만 꺼내겠다는 표현식
+
+    # 여기서 student 대신 x를 써도 똑같이 작동합니다 ([x['score'] for x in students]).
+
+    # for i in range(total) :
+    #     sum += i
+
+    total = [s['score'] for s in students]
+     
+   
     #for student in students : students 리스트에서 학생 데이터를 하나씩 꺼내어 student라는 변수에 담는다.
     #student['score'] : 그 꺼낸 학생 데이터(student)에서 score(점수) 키에 해당하는 값만 쏙 뽑아낸다.
     #[ ... ] : 그렇게 뽑아낸 값들을 모아서 새로운 리스트(scores)로 완성한다.
     # TODO: 평균 점수를 계산하세요
     pass
-    average = sum(score) / len(score)
 
+    avg = sum(total) / len(students)
     
     # TODO: 평균 이상인 학생들의 이름을 리스트로 추출하세요
     pass
-    above_average_students = [student['name'] for student in students
-                    if student['score'] >= average]
-    
-    return average, above_average_students
+
+    name_score = [s['name'] for s in students if avg <= s['score']]
+    return avg, name_score
+
 
 # 테스트 케이스
 if __name__ == "__main__":
@@ -84,5 +98,13 @@ if __name__ == "__main__":
     avg, students = find_above_average_students(students2)
     print(f"평균 점수: {avg}")
     print(f"평균 이상 학생: {students}")
+
+
+# total = [student['score'] for student in students]
+
+#     total = [s['score'] for s in students]
+#     avg = sum(total)/len(students)
+#     students = [s['name'] for s  in students if avg < s['score']]
+#     return avg, students
 
 

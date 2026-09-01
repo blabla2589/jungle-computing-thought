@@ -31,7 +31,7 @@
 - 새로운 배열을 만들어 값을 채워넣으세요
 """
 
-def rotate_matrix_90(matrix):
+def rotate_matrix_90(matrix): 
     """
     2차원 배열을 시계방향으로 90도 회전
     
@@ -41,19 +41,20 @@ def rotate_matrix_90(matrix):
     Returns:
         회전된 2차원 리스트
     """
+    # len([1, 2, 3])을 실행하면 원소 개수인 3을 돌려줍니다. 
+    # len([[1, 2, 3], [4, 5, 6], [7, 8, 9]]) 2차원 리스트의 행(row)의 개수
     n = len(matrix)
     
     # TODO: n x n 크기의 새로운 배열을 생성하세요 (0으로 초기화)
     pass
-
     rotated = [[0] * n for _ in range(n)]
-        
+
+
     # TODO: 원본 배열의 각 요소를 회전된 위치에 배치하세요
     # 힌트: (i, j) 위치의 요소는 회전 후 (j, n-1-i) 위치로 이동
-
     for i in range(n):
         for j in range(n):
-           rotated[j][n-1-i] = matrix[i][j]
+            rotated[j][n-1-i] = matrix[i][j]
     return rotated
 
 
@@ -61,6 +62,7 @@ def print_matrix(matrix):
     """배열을 보기 좋게 출력하는 헬퍼 함수"""
     for row in matrix:
         print(row)
+
 
 # 테스트 케이스
 if __name__ == "__main__":
@@ -77,6 +79,8 @@ if __name__ == "__main__":
     rotated1 = rotate_matrix_90(matrix1)
     print_matrix(rotated1)
     print()
+
+    
     
     # 테스트 케이스 2: 4x4 배열
     matrix2 = [
@@ -91,5 +95,12 @@ if __name__ == "__main__":
     print("\n회전 후:")
     rotated2 = rotate_matrix_90(matrix2)
     print_matrix(rotated2)
+
+    # rotated = [[0] * n for _ in range(n)]
+
+    # for i in range(n):
+    #     for j in range(n):
+    #         rotated[j][n-1-i] = matrix[i][j]
+    # return rotated
 
 
