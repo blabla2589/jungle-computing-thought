@@ -34,26 +34,26 @@ def process_print_queue(jobs):
         jobs: 작업 리스트
     
     Returns:
-        처리된 작업 리스트
+        처리된 작업 리스트s
     """
     # TODO: deque로 큐 생성
+
     queue = deque(jobs)
-    
+
     processed = []
+   
     
     # TODO: 큐가 비어있지 않은 동안 반복
     ## 큐에서 작업 꺼내기
     ## 작업 처리 (출력 및 리스트에 추가)
-    # while queue:
-    #     current = queue.popleft()
-    #     processed.append(current)
-    # return processed
 
-    while queue:
+    while queue :
         current = queue.popleft()
-        print(f"처리: {current}")
+        print (f"처리: {current}")
         processed.append(current)
     return processed
+    
+
 
 # 테스트 케이스
 if __name__ == "__main__":
@@ -63,11 +63,19 @@ if __name__ == "__main__":
     result1 = process_print_queue(jobs1)
     print(f"처리 완료: {result1}")
     print()
-    
+
     # 테스트 케이스 2
     jobs2 = ["이메일", "보고서", "사진", "계약서"]
     print("=== 프린터 작업 처리 ===")
     result2 = process_print_queue(jobs2)
     print(f"처리 완료: {result2}")
 
+#  queue = deque(jobs)
+    
+#  processed = []
+
+    # while queue:
+    #     current = queue.popleft()
+    #     processed.append(current)
+    # return processed
 

@@ -63,6 +63,8 @@ def check_solution(problem_file):
             cwd=str(SCRIPT_DIR),
         )
 
+
+
         if result.returncode != 0:
             return False, f"❌ 실행 오류:\n{result.stderr}"
 

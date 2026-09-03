@@ -43,9 +43,17 @@ def is_valid_parentheses(s):
     ## 스택이 비어있으면 False 반환
     ## 아니면 스택에서 pop
     pass
+    for char in s:
+        if char == '(':
+            stack.append(char)
+        elif char == ')':
+            if not stack:
+                return False
+            else: stack.pop()
     
     # TODO: 반복이 끝나면 스택이 비어있는지 확인
-    pass
+    return not stack
+
 
 # 테스트 케이스
 if __name__ == "__main__":
@@ -76,4 +84,12 @@ if __name__ == "__main__":
     print(f"입력: {test4}")
     print(f"결과: {result4}")
 
+    # for char in s:
+    #     if char == '(':
+    #         stack.append(char)
+    #     elif char == ')':
+    #         if not stack:
+    #             return False
+    #         else: stack.pop()
+    # return not stack # 스택이 비어있으면 True, 남아있으면 False 반환
 
