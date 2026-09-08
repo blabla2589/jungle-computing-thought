@@ -70,11 +70,11 @@ DP가 필요한 경우:
 - 자원 할당
 """
 
-def fibonacci_memo(n, memo=None):
+def fibonacci_memo(n, memo=None): #0 #1 #2 #3
     """
     메모이제이션을 사용한 피보나치 (하향식 DP)
     
-    Args:
+    Args:ㄴ
         n: 피보나치 인덱스
         memo: 계산 결과를 저장할 딕셔너리
     
@@ -82,16 +82,36 @@ def fibonacci_memo(n, memo=None):
         n번째 피보나치 수
     """
     # TODO: memo가 None이면 빈 딕셔너리로 초기화
-    pass
+    if memo is None:
+        memo = {} #{} #{} #{}
     
     # TODO: base case 
-    pass
+    if n == 0: 
+        memo[n] = 0
+        return memo[n] 
+    elif n == 1:
+        memo[n] = 1
+        return memo[n]
     
     # TODO: 이미 계산한 값이 memo에 있으면 반환
-    pass
+    if n in memo: 
+        return memo[n] #메모이제이션
     
     # TODO: 재귀 호출하여 계산하고 memo에 저장
-    pass
+    memo[n] = fibonacci_memo(n-1, memo) + fibonacci_memo(n-2, memo)
+    # 2 -> [1]+[0] = 1, 3 -> [2](1) + [1](2), 4 -> [3](2) + [2](1)
+    """
+    memo
+       {0 : 0,
+        1 : 1,
+        2 : 1,
+        3 : 2,
+    
+         }
+    
+    """
+    
+    
     
     return memo[n]
 
