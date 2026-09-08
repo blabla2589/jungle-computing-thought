@@ -55,6 +55,7 @@ def dfs(graph, start, visited=None):
     for next in graph[start]:
         if next not in visited:
             dfs(graph, next, visited=visited)
+
     return visited
 
 # 테스트 케이스
@@ -71,4 +72,3 @@ if __name__ == "__main__":
     result = dfs(graph, 0)
     print(f"시작 정점: 0")
     print(f"방문 순서: {result}")
-
